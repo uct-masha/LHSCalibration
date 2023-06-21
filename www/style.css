@@ -1,0 +1,13 @@
+html {min-height:100%}
+
+li.nav-item > a {
+    border-top-color: #30f9e2!important;
+    border-top-width: thick!important;
+    border-top-style: groove!important;
+    border-top-left-radius: 10px!important;
+    border-top-right-radius: 5px!important;
+}
+
+li.nav-item > a.active {
+    border-top-color: #ea39b8 !important;
+}
