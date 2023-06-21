@@ -1,13 +1,4 @@
----
-title: "Readme"
-author: "Jared Norman"
-date: "18/05/2022"
-output: pdf_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# README
 
 This repository illustrates how you can do model calibration in R.
 Usually we have some parameter sheet with parameter values and we can include to that information about their underlying distributions. An example of such a parameter sheet can be found in `ParametersExample.xlsx`
@@ -27,7 +18,7 @@ Of course the actual value of `nu` used in your model will take on a different d
 hist(nu, breaks = 50)
 ```
 
-# How to use this repo
+## How to use this repo
 First you will want to ensure you are using a parameter sheet in the same format as `ParameterExample.xlsx` and that these parameters are sufficient to pull into your model. One code snippet useful for this is:
 ```{r}
 parms <- readxl::read_excel("ParametersExample.xlsx", sheet="universal") %>%
@@ -56,7 +47,6 @@ Once you're satisfied that your model runs and the parameter sheet looks good yo
 ```{r}
 source('makeLHS.R')
 ```
-
 
 Now that you have some parameters sampled using LHS you need to run your model with each of these. The `calibrate.R` script is designed to be called with a parameter. To call an R script with a parameter you can use the `Rscript` program in the terminal. For example if I call `Rscript calibrate.R 1` from the terminal in the working directory then inside that R script the `commandArgs(T)` will be '1'.
 
